@@ -205,8 +205,14 @@ const postMedia = async (req, res) => {
                 { upsert: false, new: true } // Combined options into a single object
             );
 
-            const media = new Media(item);
-            await media.save();
+            const existingMedia = await Media.findOne({ 'id': itemId });
+
+            if (!existingMedia) {
+                // Create a new media item
+                const media = new Media(item);
+                await media.save();
+                console.log('New media item saved successfully');
+            }
 
             res.status(201).json({
                 message: "Bookmarked successfully!",
