@@ -14,9 +14,6 @@ To set up the server locally, follow these steps:
 * Authentication is managed with JSON Web Tokens (JWT), and 
 * password hashing is implemented using bcrypt.
 
-## Resources Used
-### APIs: Tmdb api https://www.themoviedb.org/
-
 ## API Endpoints
 ### User Routes
 * POST user/register: Register a new user.
@@ -56,4 +53,7 @@ JWT authentication is implemented to secure routes that require user authenticat
 * password: { type: String, required: true },
 * media: [{ type: Number }]
 
+## Resources Used
+### TMDB API: https://www.themoviedb.org/
+### Deployment Platform: Render (https://render.com/)
 
