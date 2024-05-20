@@ -7,3 +7,28 @@ To set up the server locally, follow these steps:
 2. Install dependencies using npm: npm install
 3. Ensure MongoDB is running locally or provide a connection URI in the environment variables.
 4. Start the server: node index.js
+
+## Technologies Used
+Node.js with Express.js for HTTP request handling, MongoDB for data storage, and Mongoose for database interaction. Authentication is managed with JSON Web Tokens (JWT), and password hashing is implemented using bcrypt.
+
+## API Endpoints
+### User Routes
+* POST user/register: Register a new user.
+* POST user/login: User login.
+  
+### Data Routes
+* GET data/trending: Get trending media.
+* GET data/movies: Get movies.
+* GET data/tvseries: Get TV series.
+* GET data/search: Search for media.
+* GET data/details: Get details of a specific media item.
+
+### Media Routes
+* POST media/addmedia: Add new media
+* DELETE media/delete/:itemId: Delete media by ID.
+* POST media/bookmarks: Add or remove media from bookmarks.
+* POST media/get-bookmarks: Get user's bookmarked media.
+* POST media/search: Search for user bookmark.
+
+  
+  
