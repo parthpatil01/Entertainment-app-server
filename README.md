@@ -54,6 +54,6 @@ JWT authentication is implemented to secure routes that require user authenticat
 * media: [{ type: Number }]
 
 ## Resources Used
-### TMDB API: https://www.themoviedb.org/
-### Deployment Platform: Render (https://render.com/)
+#### TMDB API: https://www.themoviedb.org/
+#### Deployment Platform: Render https://render.com/
 
