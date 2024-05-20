@@ -7,15 +7,15 @@ This server is designed to support an entertainment application, providing funct
 To set up the server locally, follow these steps:
 1. Clone this repository to your local machine.
 2. Install dependencies using npm: npm install
-3. Environment Variables
+#### Environment Variables
     Before running the app, make sure to set up the necessary environment variables. Create a .env file in the root of your project directory and add the required variables.
 
-    PORT= 5000
-    AUTH_TOKEN = enter your tmdb api key
-    MONGODB_URI = connection uri for mongodb
-    SECRET = secret key for jwt verification
+     PORT= 5000 <br />
+     AUTH_TOKEN = enter your tmdb api key <br />
+     MONGODB_URI = connection uri for mongodb <br />
+     SECRET = secret key for jwt verification <br /> 
    
-5. Start the server: node index.js
+3. Start the server: node index.js
 
 ## Technologies Used
 * Node.js with Express.js for HTTP request handling, 
