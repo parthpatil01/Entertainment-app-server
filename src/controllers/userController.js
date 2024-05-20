@@ -7,6 +7,7 @@ const User = require('../models/userModel');
 
 
 const registerUser = async (req, res) => {
+  
   try {
     let { email } = req.body;
     email = email.toLowerCase()
@@ -52,7 +53,7 @@ let loginUser = async (req, res) => {
     // const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '1h' });
     const token = jwt.sign({ userId: user._id }, JWT_SECRET);
 
-      res.status(201).json({ "token": token, "message": "Successufully logged in!", data: {useremail: user.email } });
+      res.status(201).json({ "token": token, "message": "Successfully logged in!", data: {useremail: user.email } });
     } else {
       res.status(401).send({ message: 'Invalid password' });
     }

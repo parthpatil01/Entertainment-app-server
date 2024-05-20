@@ -47,9 +47,3 @@ mongoose.connection.on('error', (err) => {
     console.error('MongoDB connection error:', err);
 });
 
-
-axios.interceptors.response.use(response => {
-    return response;
-}, error => {
-    throw error; // Re-throw the error to be caught by the catch blocks
-});

@@ -185,6 +185,7 @@ const getBookmarkSearchResult = async (req, res) => {
 }
 
 const postMedia = async (req, res) => {
+
     try {
 
         const { item, email, location } = req.body;
@@ -195,6 +196,13 @@ const postMedia = async (req, res) => {
             return res.status(404).json({ message: "User not found" });
         }
 
+        // Determine media_type based on location
+       
+        if (location === 175) {
+            item.media_type = 'movie';
+        } else if (location === 174) {
+            item.media_type = 'tv';
+        }
 
         if (!user.media.includes(itemId)) {
             // Associate the existing media with the user
