@@ -15,7 +15,7 @@ To set up the server locally, follow these steps:
 * password hashing is implemented using bcrypt.
 
 ## Resources Used
-### APIs: Tmdb api
+### APIs: Tmdb api https://www.themoviedb.org/
 
 ## API Endpoints
 ### User Routes
