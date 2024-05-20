@@ -9,7 +9,10 @@ To set up the server locally, follow these steps:
 4. Start the server: node index.js
 
 ## Technologies Used
-Node.js with Express.js for HTTP request handling, MongoDB for data storage, and Mongoose for database interaction. Authentication is managed with JSON Web Tokens (JWT), and password hashing is implemented using bcrypt.
+* Node.js with Express.js for HTTP request handling, 
+* MongoDB for data storage, and Mongoose for database interaction. 
+* Authentication is managed with JSON Web Tokens (JWT), and 
+* password hashing is implemented using bcrypt.
 
 ## API Endpoints
 ### User Routes
@@ -30,5 +33,24 @@ Node.js with Express.js for HTTP request handling, MongoDB for data storage, and
 * POST media/get-bookmarks: Get user's bookmarked media.
 * POST media/search: Search for user bookmark.
 
-  
-  
+## Authentication and Authorization
+JWT authentication is implemented to secure routes that require user authentication.  
+
+## Models
+### Media Model
+* backdrop_path: String,
+* poster_path: String,
+* id: Number,
+* original_title: String,
+* media_type: String,
+* title: String,
+* release_date: String,
+* first_air_date:String,
+* name:String,
+
+### User Model
+* email: { type: String, required: true, unique:true },
+* password: { type: String, required: true },
+* media: [{ type: Number }]
+
+
