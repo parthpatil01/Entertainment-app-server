@@ -14,6 +14,9 @@ To set up the server locally, follow these steps:
 * Authentication is managed with JSON Web Tokens (JWT), and 
 * password hashing is implemented using bcrypt.
 
+## Resources Used
+### APIs: Tmdb api
+
 ## API Endpoints
 ### User Routes
 * POST user/register: Register a new user.
