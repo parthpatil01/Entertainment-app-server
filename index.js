@@ -7,23 +7,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const axios = require('axios');
 require('dotenv').config();
-const path = require('path');
+
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
-
-
-
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'build')));
-
-// Catch-all handler to send back the index.html for any route
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 
 // Middleware
 app.use(bodyParser.json());

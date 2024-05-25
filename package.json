@@ -4,8 +4,6 @@
   "description": "server 2.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "parth",
@@ -18,7 +16,6 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.6.1",
-    "mongoose": "^8.3.4",
-    "react-scripts": "^5.0.1"
+    "mongoose": "^8.3.4"
   }
 }
