@@ -6,7 +6,7 @@ This server is designed to support Trendflix, providing functionalities related 
 ## Getting Started
 To set up the server locally, follow these steps:
 #### 1. Clone this repository to your local machine.
-    https://github.com/parthpatil01/entertainment-app-server-2.0.git
+    https://github.com/parthpatil01/Trendflix-server.git
 #### 2. Install dependencies using npm: 
     npm install
 #### 3. Environment Variables: 
