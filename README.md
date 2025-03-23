@@ -1,12 +1,12 @@
 ## Entertainment App Server
-This server is designed to support an entertainment application, providing functionalities related to media content and user management. It utilizes Node.js with Express.js for handling HTTP requests and MongoDB with Mongoose for data storage and manipulation.
+This server is designed to support Trendflix, providing functionalities related to media content and user management. It utilizes Node.js with Express.js for handling HTTP requests and MongoDB with Mongoose for data storage and manipulation.
 
-#### Live link: https://entertainment-app-9jvl.onrender.com/
+#### Live link: https://trendflix.onrender.com/
 
 ## Getting Started
 To set up the server locally, follow these steps:
 #### 1. Clone this repository to your local machine.
-    https://github.com/parthpatil01/entertainment-app-server-2.0.git
+    https://github.com/parthpatil01/Trendflix-server.git
 #### 2. Install dependencies using npm: 
     npm install
 #### 3. Environment Variables: 
