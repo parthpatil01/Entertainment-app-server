@@ -1,12 +1,12 @@
-## Entertainment App Server
-This server is designed to support an entertainment application, providing functionalities related to media content and user management. It utilizes Node.js with Express.js for handling HTTP requests and MongoDB with Mongoose for data storage and manipulation.
+## Trendflix Server
+This server powers the Trendflix entertainment application, providing a modern GraphQL API for media content and user management. Built with Node.js and Express.js, it offers efficient data fetching through GraphQL queries and mutations, with MongoDB as the data store.
 
-#### Live link: https://entertainment-app-9jvl.onrender.com/
+#### Live link: https://https://trendflix.onrender.com/
 
 ## Getting Started
 To set up the server locally, follow these steps:
 #### 1. Clone this repository to your local machine.
-    https://github.com/parthpatil01/entertainment-app-server-2.0.git
+    https://github.com/parthpatil01/trendflix-server.git
 #### 2. Install dependencies using npm: 
     npm install
 #### 3. Environment Variables: 
@@ -20,49 +20,115 @@ To set up the server locally, follow these steps:
     node index.js
 
 ## Technologies Used
-* Node.js with Express.js for HTTP request handling, 
-* MongoDB for data storage, and Mongoose for database interaction. 
-* Authentication is managed with JSON Web Tokens (JWT), and 
-* password hashing is implemented using bcrypt.
+* Node.js with Express.js server
+* Apollo Server for GraphQL implementation
+* MongoDB with Mongoose for data persistence
+* JWT for authentication
+* bcrypt for password hashing
+* TMDB API for media data
 
-## API Endpoints
-### User Routes
-* POST user/register: Register a new user.
-* POST user/login: User login.
+## GraphQL API 
+
+### Queries
+query {
+  trending {
+    id
+    title
+    name
+    poster_path
+    media_type
+  }
   
-### Data Routes
-* GET data/trending: Get trending media.
-* GET data/movies: Get movies.
-* GET data/tvseries: Get TV series.
-* GET data/search: Search for media.
-* GET data/details: Get details of a specific media item.
+  movies(first: 10, after: "cursor") {
+    edges {
+      node {
+        id
+        title
+        poster_path
+      }
+      cursor
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+  
+  tvSeries(first: 10) {
+    edges {
+      node {
+        id
+        name
+        first_air_date
+      }
+    }
+  }
+  
+  search(q: "query", type: "movie|tv") {
+    id
+    title
+    name
+  }
+  
+  details(itemId: Int!, type: "movie|tv") {
+    detail {
+      title
+      overview
+      genres {
+        name
+      }
+    }
+    cast {
+      cast {
+        name
+      }
+    }
+  }
+  
+  bookmarks {
+    id
+    title
+    media_type
+  }
+  
+  bookmarkStatus(itemId: Int!) {
+    isBookmarked
+  }
+}
 
-### Media Routes
-* POST media/addmedia: Add new media
-* DELETE media/delete/:itemId: Delete media by ID.
-* POST media/bookmarks: Add or remove media from bookmarks.
-* POST media/get-bookmarks: Get user's bookmarked media.
-* POST media/search: Search for user bookmark.
-
+### Mutations
+mutation {
+  registerUser(email: "user@example.com", password: "secure123") {
+    message
+  }
+  
+  loginUser(email: "user@example.com", password: "secure123") {
+    token
+    message
+  }
+  
+  postMedia(item: {
+    id: 123,
+    title: "Movie Title",
+    media_type: "movie"
+  }, location: 175) {
+    message
+  }
+  
+  deleteMedia(itemId: 123) {
+    message
+  }
+}
 ## Authentication and Authorization
 JWT authentication is implemented to secure routes that require user authentication.  
 
-## Models
-### Media Model
-* backdrop_path: String,
-* poster_path: String,
-* id: Number,
-* original_title: String,
-* media_type: String,
-* title: String,
-* release_date: String,
-* first_air_date:String,
-* name:String,
+## Migration Notes
 
-### User Model
-* email: { type: String, required: true, unique:true },
-* password: { type: String, required: true },
-* media: [{ type: Number }]
+* This server has been migrated from REST to GraphQL, offering:
+* More efficient data fetching
+* Strong typing system
+* Flexible queries with exactly the data needed
+* Better performance with features like batching and caching
 
 ## Resources Used
 #### TMDB API: https://www.themoviedb.org/
