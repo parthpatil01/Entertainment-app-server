@@ -28,10 +28,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB');
 
-  // Create GraphQL schema
   const schema = makeExecutableSchema({ typeDefs, resolvers });
 
-  // Single GraphQL endpoint
   app.use('/graphql', (req, res) => {
     let user = null;
 
@@ -50,7 +48,7 @@ mongoose.connection.on('connected', () => {
 
     return createHandler({
       schema,
-      context: { user }, // Pass user to resolvers
+      context: { user }, 
     })(req, res);
   });
 

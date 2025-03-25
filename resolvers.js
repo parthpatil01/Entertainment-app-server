@@ -1,4 +1,4 @@
-// resolvers.js
+
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('./models/userModel');
@@ -32,7 +32,7 @@ const resolvers = {
     },
     movies: async (_, { first = 20, after = null }) => {
       try {
-        // Decode the cursor to get the page number
+
         const afterPage = after ? parseInt(Buffer.from(after, 'base64').toString('ascii')) : 1;
         const currentPage = after ? afterPage + 1 : 1;
         
@@ -155,22 +155,18 @@ const resolvers = {
     },
     bookmarks: async (_, { search }, context) => {
       if (!context.user) throw new Error('Unauthorized');
-      
-      // Find the user
+
       const user = await User.findOne({ email: context.user.email });
       if (!user) throw new Error('User not found');
       
-      // Get all bookmarked media IDs
       const mediaIds = user.media;
       
-      // Base query - only include bookmarked items
       const query = { id: { $in: mediaIds } };
       
-      // If search parameter exists, add search conditions
       if (search) {
         query.$or = [
-          { title: { $regex: search, $options: 'i' } },  // Case-insensitive search on title
-          { name: { $regex: search, $options: 'i' } }   // Case-insensitive search on name
+          { title: { $regex: search, $options: 'i' } }, 
+          { name: { $regex: search, $options: 'i' } }   
         ];
       }
       
