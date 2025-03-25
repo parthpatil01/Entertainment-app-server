@@ -1,7 +1,7 @@
 ## Trendflix Server
 This server powers the Trendflix entertainment application, providing a modern GraphQL API for media content and user management. Built with Node.js and Express.js, it offers efficient data fetching through GraphQL queries and mutations, with MongoDB as the data store.
 
-#### Live link: https://https://trendflix.onrender.com/
+#### Live link: https://trendflix.onrender.com/
 
 ## Getting Started
 To set up the server locally, follow these steps:
