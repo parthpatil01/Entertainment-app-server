@@ -47,9 +47,40 @@ const typeDefs = gql`
   }
 
   type MediaDetails {
-    detail: Media
-    cast: Cast
-  }
+  detail: MediaDetail
+  cast: Cast
+}
+
+type MediaDetail {
+  id: Int!
+  title: String
+  name: String
+  original_name: String
+  original_title: String
+  poster_path: String
+  vote_average: Float
+  runtime: Int
+  episode_run_time: [Int]
+  release_date: String
+  first_air_date: String
+  last_air_date: String
+  status: String
+  original_language: String
+  overview: String
+  homepage: String
+  imdb_id: String
+  genres: [Genre]
+  created_by: [Creator]
+}
+
+type Genre {
+  name: String
+}
+
+type Creator {
+  name: String
+  original_name: String
+}
 
   type Cast {
     cast: [CastMember]
