@@ -30,7 +30,7 @@ To set up the server locally, follow these steps:
 ## GraphQL API 
 
 ### Queries
-query {
+```
   trending {
     id
     title
@@ -95,8 +95,9 @@ query {
     isBookmarked
   }
 }
-
+```
 ### Mutations
+```
 mutation {
   registerUser(email: "user@example.com", password: "secure123") {
     message
@@ -119,12 +120,13 @@ mutation {
     message
   }
 }
+```
 ## Authentication and Authorization
 JWT authentication is implemented to secure routes that require user authentication.  
 
 ## Migration Notes
 
-* This server has been migrated from REST to GraphQL, offering:
+This server has been migrated from REST to GraphQL, offering:
 * More efficient data fetching
 * Strong typing system
 * Flexible queries with exactly the data needed
